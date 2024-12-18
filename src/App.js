@@ -1,23 +1,31 @@
 import React from 'react';
-import Header from './components/Header';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Skills from './components/Skills';
-import Languages from './components/Languages';
-import Footer from './components/Footer';
+import HeroSection from './components/HeroSection';
+import ServicesSection from './components/ServicesSection';
+import ExperienceSection from './components/ExperienceSection';
+import EducationSection from './components/EducationSection';
+import LanguagesSection from './components/LanguagesSection';
+import ContactSection from './components/ContactSection';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: { main: '#90caf9' },
+    background: { default: '#121212', paper: '#1e1e1e' },
+  },
+});
 
 function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <Experience />
-        <Education />
-        <Skills />
-        <Languages />
-      </main>
-      <Footer />
-    </>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <HeroSection />
+      <ServicesSection />
+      <ExperienceSection />
+      <EducationSection />
+      <LanguagesSection />
+      <ContactSection />
+    </ThemeProvider>
   );
 }
 
